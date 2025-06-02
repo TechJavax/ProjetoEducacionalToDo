@@ -8,7 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table()
+@Table(name = "tasks")
 public class TaskModel {
 
     @Id
@@ -25,6 +25,9 @@ public class TaskModel {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+
+    private Boolean completed = false;
 
 
     public TaskModel(){
@@ -52,5 +55,9 @@ public class TaskModel {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public Boolean getCompleted() {
+        return completed;
     }
 }
