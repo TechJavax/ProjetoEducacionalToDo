@@ -7,6 +7,7 @@ import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -28,6 +29,10 @@ public class TaskService {
         return taskRepository.findByCompleted(task);
     }
 
+    public Optional<Task> findByid(Long id) {
+        return taskRepository.findById(id);
+    }
+
     public List<Task> findAllTasks(Task task) {
         return taskRepository.findAll();
     }
@@ -38,5 +43,10 @@ public class TaskService {
 
     public void deleteAllTasks() {
         this.taskRepository.deleteAll();
+    }
+
+    /** Falta implementar o metodo de update**/
+    public void updateTask() {
+
     }
 }
